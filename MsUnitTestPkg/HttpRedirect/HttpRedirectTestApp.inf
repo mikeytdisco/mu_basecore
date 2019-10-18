@@ -1,0 +1,66 @@
+## @file
+# HttpRedirectTestApp.inf
+#
+# Test application to verify HttpRedirect strings are acceptable to Dfci.
+#
+# Copyright (C) Microsoft Corporation. All rights reserved.
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = HttpRedirectTestApp
+  FILE_GUID                      = 59250dec-c6a6-4b60-87dd-ef03e149d353
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = HttpRedirectTestAppEntry
+
+#
+# The following information is for reference only and not required by the build tools.
+#
+#  VALID_ARCHITECTURES           = IA32 X64 ARM AARCH64
+#
+
+[Sources]
+  NetworkRequest.h
+  HttpRedirectTest.c
+  BasicOperations.h
+  BasicOperations.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  NetworkPkg/NetworkPkg.dec
+  MsUnitTestPkg/MsUnitTestPkg.dec
+  ShellPkg/ShellPkg.dec
+
+[Guids]
+  gEfiBootManagerPolicyNetworkGuid
+  gEfiCertX509Guid
+  gEfiTlsCaCertificateGuid
+
+[Protocols]
+  gEfiBootManagerPolicyProtocolGuid
+  gEfiHttpProtocolGuid
+  gEfiHttpServiceBindingProtocolGuid
+
+[LibraryClasses]
+  BaseLib
+  BaseMemoryLib
+  DebugLib
+  HttpLib
+  NetLib
+  PrintLib
+  ShellLib
+  UefiApplicationEntryPoint
+  UefiLib
+  UnitTestAssertLib
+  UnitTestLib
+  UnitTestLogLib
+
+[Guids]
+
+
+
+
